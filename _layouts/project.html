@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="container project">
+  <header class="project-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  </header>
+  {% if page.images %}
+  <div class="gallery">
+    {% for img in page.images %}
+      <figure>
+        <img src="{{ img.url }}" alt="{{ img.alt }}" loading="lazy">
+      </figure>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="project-body">
+    {{ content }}
+  </div>
+  {% if page.external_url %}
+    <p><a class="btn" href="{{ page.external_url }}" target="_blank" rel="noopener">Ver más</a></p>
+  {% endif %}
+</article>

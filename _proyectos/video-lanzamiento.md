@@ -11,9 +11,8 @@ images:
   - url: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"
     alt: "Gráficos en movimiento y branding"
 external_url: "https://javiernapoles.my.canva.site/"
-layout: single
-author_profile: false
-toc: false
+layout: project
+---
 ---
 
 Produje un video de lanzamiento orientado a impacto y claridad del mensaje: estructura narrativa, edición precisa, motion graphics integrados y mezcla de audio alineada a la marca.
@@ -25,16 +24,16 @@ Produje un video de lanzamiento orientado a impacto y claridad del mensaje: estr
 **Proceso**: Guion técnico, edición, diseño de motion, revisión con cliente y master final.
 
 {% if page.images %}
-<div class="portfolio-gallery">
+<div class="gallery">
   {% for img in page.images %}
   <figure>
     <img src="{{ img.url }}" alt="{{ img.alt }}" loading="lazy" />
     <figcaption>{{ img.alt }}</figcaption>
   </figure>
   {% endfor %}
-  </div>
+</div>
 {% endif %}
 
 {% if page.external_url %}
-<p><a class="btn btn-primary" href="{{ page.external_url }}" target="_blank" rel="noopener">Ver reels y muestras</a></p>
+<p><a class="btn" href="{{ page.external_url }}" target="_blank" rel="noopener">Ver reels y muestras</a></p>
 {% endif %}

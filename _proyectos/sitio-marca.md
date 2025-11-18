@@ -11,9 +11,8 @@ images:
   - url: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=1200&auto=format&fit=crop"
     alt: "Secciones y componentes UI"
 external_url: "https://javiernapoles.my.canva.site/"
-layout: single
-author_profile: false
-toc: false
+layout: project
+---
 ---
 
 Construí una landing page con una estructura clara, copy enfocado y componentes visuales consistentes. Se aplicaron mejores prácticas de SEO on-page y se definió una jerarquía visual que guía la acción del usuario.
@@ -25,16 +24,16 @@ Construí una landing page con una estructura clara, copy enfocado y componentes
 **Proceso**: Investigación de usuario, definición de estructura, diseño de componentes, iteración y validación.
 
 {% if page.images %}
-<div class="portfolio-gallery">
+<div class="gallery">
   {% for img in page.images %}
   <figure>
     <img src="{{ img.url }}" alt="{{ img.alt }}" loading="lazy" />
     <figcaption>{{ img.alt }}</figcaption>
   </figure>
   {% endfor %}
-  </div>
+</div>
 {% endif %}
 
 {% if page.external_url %}
-<p><a class="btn btn-primary" href="{{ page.external_url }}" target="_blank" rel="noopener">Ver proyecto externo</a></p>
+<p><a class="btn" href="{{ page.external_url }}" target="_blank" rel="noopener">Ver proyecto externo</a></p>
 {% endif %}

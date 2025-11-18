@@ -11,9 +11,8 @@ images:
   - url: "https://images.unsplash.com/photo-1529336953121-c0fa797b7f81?q=80&w=1200&auto=format&fit=crop"
     alt: "Variantes y guía básica de marca"
 external_url: "https://javiernapoles.my.canva.site/"
-layout: single
-author_profile: false
-toc: false
+layout: project
+---
 ---
 
 Diseñé un sistema de identidad visual completo: desde la exploración conceptual hasta la entrega de un manual de marca básico con paleta, tipografías y usos consistentes. El logotipo funciona en versiones horizontales, verticales y monocromáticas.
@@ -25,16 +24,16 @@ Diseñé un sistema de identidad visual completo: desde la exploración conceptu
 **Proceso**: Investigación, moodboards, bocetos, vectorización, pruebas de aplicación y documentación.
 
 {% if page.images %}
-<div class="portfolio-gallery">
+<div class="gallery">
   {% for img in page.images %}
   <figure>
     <img src="{{ img.url }}" alt="{{ img.alt }}" loading="lazy" />
     <figcaption>{{ img.alt }}</figcaption>
   </figure>
   {% endfor %}
-  </div>
+</div>
 {% endif %}
 
 {% if page.external_url %}
-<p><a class="btn btn-primary" href="{{ page.external_url }}" target="_blank" rel="noopener">Ver presentación externa</a></p>
+<p><a class="btn" href="{{ page.external_url }}" target="_blank" rel="noopener">Ver presentación externa</a></p>
 {% endif %}
