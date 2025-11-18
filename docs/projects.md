@@ -4,62 +4,69 @@ permalink: /portafolio/
 layout: single
 ---
 
-Aquí tienes una selección curada de mi trabajo reciente en diferentes áreas de diseño y edición de video. Cada proyecto refleja un enfoque creativo adaptado a las necesidades del cliente.
+Explora mi trabajo por categoría y entra a cada proyecto para ver el proceso y las imágenes.
 
-## Video Editing
+### Filtros rápidos
 
-Edición orientada a entregar mensajes claros, dinámicos y con alto impacto visual. Trabajo narrativa, ritmo, motion graphics, integración de audio y texto para resultados profesionales alineados a marca.
+- [Todos](#todos)
+- [Logo](#logo)
+- [Web](#web)
+- [Video](#video)
 
-**Proyectos destacados**
-- Lanzamiento de producto — edición, ritmo, motion graphics, subtítulos.
-- Video corporativo — storytelling, integración de marca, audio mixing.
-- Reels / Shorts — mensajes concisos y alto impacto visual.
+## Todos
+<div class="portfolio-grid">
+{% for p in site.proyectos %}
+  <article class="portfolio-card">
+    <a href="{{ p.url | relative_url }}" aria-label="Ver {{ p.title }}">
+      <img src="{{ p.feature_image | default: p.images[0].url }}" alt="{{ p.title }}" loading="lazy" />
+    </a>
+    <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="portfolio-meta">{{ p.categories | join: ", " }}</p>
+  </article>
+{% endfor %}
+</div>
 
-[Ver muestras en Canva](https://javiernapoles.my.canva.site/)
+## Logo {#logo}
+{% assign logos = site.proyectos | where_exp: "item","item.categories contains 'Logo'" %}
+<div class="portfolio-grid">
+{% for p in logos %}
+  <article class="portfolio-card">
+    <a href="{{ p.url | relative_url }}">
+      <img src="{{ p.feature_image | default: p.images[0].url }}" alt="{{ p.title }}" loading="lazy" />
+    </a>
+    <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="portfolio-meta">Logo</p>
+  </article>
+{% endfor %}
+</div>
 
-## Web Design
+## Web {#web}
+{% assign webs = site.proyectos | where_exp: "item","item.categories contains 'Web'" %}
+<div class="portfolio-grid">
+{% for p in webs %}
+  <article class="portfolio-card">
+    <a href="{{ p.url | relative_url }}">
+      <img src="{{ p.feature_image | default: p.images[0].url }}" alt="{{ p.title }}" loading="lazy" />
+    </a>
+    <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="portfolio-meta">Web</p>
+  </article>
+{% endfor %}
+</div>
 
-He apoyado marcas en diseño de sitios web, optimización SEO, creación de logotipo y fotografía. Diseño experiencias intuitivas, limpias y enfocadas en comunicación directa con el usuario.
-
-**Proyectos destacados**
-- Sitio web de marca emergente — estructura, UX básico, copy y SEO on-page.
-- Landing page con enfoque comercial — claridad de mensaje y conversión.
-- Portafolio personal — organización por categorías y narrativa visual.
-
-[Ver muestras en Canva](https://javiernapoles.my.canva.site/)
-
-## Logo Design
-
-Creación de identidades memorables que reflejan la esencia de la marca. Diseño logotipos únicos y consistentes que funcionan en todos los formatos.
-
-**Proyectos destacados**
-- Naming y logotipo — exploración tipográfica y simbólica.
-- Manual de marca básico — paleta, tipografía, usos consistentes.
-- Adaptaciones — versiones horizontales, verticales, monocromáticas.
-
-[Ver muestras en Canva](https://javiernapoles.my.canva.site/)
-
-## Print
-
-Diseño para materiales impresos: etiquetas, pósters y portadas. Cuido tipografía, composición y equilibrio visual para piezas de alta calidad.
-
-**Proyectos destacados**
-- Diseño de etiquetas — formato, legibilidad y normativa.
-- Pósters y flyers — composición, jerarquía y impacto.
-- Portadas — concepto visual y alineación con contenido.
-
-[Ver muestras en Canva](https://javiernapoles.my.canva.site/)
-
-## Photography
-
-Fotografía con estilo documental y enfoque en emoción y atmósfera. Busco la honestidad y los detalles que cuentan historias.
-
-**Proyectos destacados**
-- Retratos — dirección de arte y luz.
-- Producto — detalle y textura fieles.
-- Eventos — narrativa y momentos clave.
-
-[Ver muestras en Canva](https://javiernapoles.my.canva.site/)
+## Video {#video}
+{% assign videos = site.proyectos | where_exp: "item","item.categories contains 'Video'" %}
+<div class="portfolio-grid">
+{% for p in videos %}
+  <article class="portfolio-card">
+    <a href="{{ p.url | relative_url }}">
+      <img src="{{ p.feature_image | default: p.images[0].url }}" alt="{{ p.title }}" loading="lazy" />
+    </a>
+    <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    <p class="portfolio-meta">Video</p>
+  </article>
+{% endfor %}
+</div>
 
 ---
 

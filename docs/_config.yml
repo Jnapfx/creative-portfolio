@@ -34,6 +34,17 @@ defaults:
     toc: true
     toc_sticky: true
     author_profile: true
+ - scope:
+     path: ''
+     type: proyectos
+   values:
+     layout: single
+     toc: false
+     author_profile: false
+collections:
+  proyectos:
+    output: true
+    permalink: /proyectos/:slug/
 footer_scripts:
 - /assets/js/dae-link.js
 - /assets/js/mobile-menu.js

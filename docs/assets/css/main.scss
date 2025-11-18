@@ -423,3 +423,63 @@ html { scroll-padding-top: calc(var(--header-h-desktop) + 8px); }
   /* Optional: prevent background scroll when menu is open */
   .nav-open { overflow: hidden; }
 }
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.portfolio-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.portfolio-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: .75rem 1rem 0;
+  margin: 0;
+}
+
+.portfolio-card .portfolio-meta {
+  color: #6c757d;
+  font-size: .9rem;
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.portfolio-gallery figure {
+  margin: 0;
+}
+
+.portfolio-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
