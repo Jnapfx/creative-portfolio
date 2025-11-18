@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     '<div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">' +
     '  <header class="modal__header">' +
     '    <h3 class="modal__title" id="modal-title"></h3>' +
-    '    <button class="modal__close" type="button" data-close aria-label="Cerrar">Cerrar</button>' +
+    '    <button class="modal__close" type="button" data-close aria-label="Close">Close</button>' +
     '  </header>' +
     '  <div class="modal__body">' +
     '    <img class="modal__image" alt="">' +
