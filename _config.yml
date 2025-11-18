@@ -1,5 +1,5 @@
 title: Javier Napoles
-description: Portafolio de Diseño Gráfico
+description: Portafolio de Diseño Gráfico — One‑Page
 url: https://jnapfx.github.io
 baseurl: /creative-portfolio
 markdown: kramdown
@@ -7,14 +7,3 @@ highlighter: rouge
 permalink: pretty
 plugins:
   - jekyll-seo-tag
-collections:
-  proyectos:
-    output: true
-    permalink: /proyectos/:slug/
-defaults:
-  - scope:
-      path: ""
-      type: proyectos
-    values:
-      layout: project
-      image:
