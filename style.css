@@ -140,10 +140,14 @@ img {
 }
 
 .logo {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
 }
 
 .nav-list {
