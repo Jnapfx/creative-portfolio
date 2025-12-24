@@ -168,7 +168,10 @@
                 </div>
                 <div id="contact" class="contact-form-wrapper">
                     <h2 class="section-title">Connect</h2>
-                    <form class="contact-form">
+                    <form class="contact-form" action="https://formsubmit.co/jnapfx@gmail.com" method="POST"
+                        id="contact-form">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New submission from Portfolio">
                         <div class="form-group">
                             <label for="name" class="sr-only">Name</label>
                             <input type="text" id="name" name="name" placeholder="Name" required>
@@ -182,6 +185,7 @@
                             <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="form-status" class="form-status"></div>
                     </form>
                 </div>
             </div>

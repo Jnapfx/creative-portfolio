@@ -349,6 +349,33 @@ img {
     box-shadow: 0 0 0 4px rgba(159, 255, 0, 0.1);
 }
 
+.form-status {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 10px;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: rgba(159, 255, 0, 0.1);
+    color: #4a7a00;
+    border: 1px solid rgba(159, 255, 0, 0.3);
+}
+
+.form-status.error {
+    display: block;
+    background-color: rgba(255, 59, 48, 0.1);
+    color: #d63030;
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 /* Footer */
 .footer {
     padding: 60px 0;

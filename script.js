@@ -316,4 +316,58 @@ document.addEventListener('DOMContentLoaded', () => {
             updateMainImage('next');
         }
     });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function (e) {
+            // TEMPORARY: Allow standard submission for activation
+            // e.preventDefault();
+            return; // Skip AJAX for now
+
+            const form = e.target;
+            const data = new FormData(form);
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+
+            // UI Loading State
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.classList.add('success');
+                    formStatus.textContent = 'Thanks for your message! I will get back to you soon.';
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    if (Object.hasOwn(errorData, 'errors')) {
+                        formStatus.classList.add('error');
+                        formStatus.textContent = errorData["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        formStatus.classList.add('error');
+                        formStatus.textContent = 'Oops! There was a problem submitting your form.';
+                    }
+                }
+            } catch (error) {
+                formStatus.classList.add('error');
+                formStatus.textContent = 'Oops! There was a problem submitting your form.';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        });
+    }
 });
