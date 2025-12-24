@@ -217,3 +217,4 @@ Free to use for personal and commercial projects.
 ---
 
 Made with ❤️ for beautiful photo galleries
+c
