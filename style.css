@@ -450,6 +450,7 @@ img {
     padding-top: var(--header-height);
     overflow: hidden;
     /* Ensure video blend doesn't cause scroll issues if scaled */
+    background-color: #faf7f4; /* Match video background color */
 }
 
 .hero-container {
@@ -1702,6 +1703,38 @@ button:disabled {
     align-items: center;
     justify-content: center;
     padding: 0 !important;
+}
+
+/* Desktop Hero Layout Adjustment */
+@media (min-width: 769px) {
+    .hero-container {
+        justify-content: space-between;
+        padding: 0 40px;
+    }
+
+    .hero-content {
+        width: 45%;
+        align-items: center;
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-media {
+        position: relative;
+        inset: auto;
+        width: 50%;
+        height: 85vh; /* Ensure it takes significant height */
+        z-index: 1;
+        border-radius: var(--border-radius);
+    }
+    
+    .hero-video {
+        border-radius: var(--border-radius);
+    }
+
+    .hero-container::before {
+        display: none; /* Remove overlay on desktop split view */
+    }
 }
 
 .laptop-wrapper:hover {
