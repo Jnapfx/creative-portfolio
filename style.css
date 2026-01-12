@@ -51,12 +51,7 @@
 }
 
 .print-desc {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    text-align: left;
+    /* Styles handled by grouped selector above */
 }
 
 .print-grid {
@@ -109,26 +104,29 @@
     gap: 60px;
 }
 
-.web-design-header {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.web-design-header .web-design-title {
-    font-family: var(--font-family);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.web-design-desc {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
+/* Description Text Styles - Centered as requested */
+.web-design-desc,
+.print-desc,
+.logos-desc,
+.videos-desc,
+.photo-desc {
     max-width: 600px;
     margin: 0 auto;
+    font-size: 1.1rem;
     line-height: 1.6;
-    text-align: left;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.web-design-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.web-design-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
 }
 
 .web-design-grid {
@@ -165,6 +163,18 @@
     .web-design-grid {
         grid-template-columns: 1fr;
         gap: 12px;
+    }
+}
+
+.mobile-separator {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-separator {
+        display: block;
+        height: 60px;
+        width: 100%;
     }
 }
 
@@ -700,12 +710,7 @@ img {
 }
 
 .photo-desc {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+    /* Styles handled by grouped selector above */
 }
 
 .photo-grid {
@@ -779,12 +784,7 @@ img {
 }
 
 .logos-desc {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+    /* Styles handled by grouped selector above */
 }
 
 .logos-grid {
@@ -981,12 +981,7 @@ img {
 }
 
 .videos-desc {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    text-align: left;
+    /* Styles handled by grouped selector above */
 }
 
 .videos-grid {
@@ -1008,11 +1003,13 @@ img {
     display: flex;
     flex-direction: column;
     height: 100%;
+    /* Add shadow and border for card visibility */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
 .video-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .video-item video {
