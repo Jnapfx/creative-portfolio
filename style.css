@@ -56,6 +56,7 @@
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    text-align: left;
 }
 
 .print-grid {
@@ -127,6 +128,7 @@
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    text-align: left;
 }
 
 .web-design-grid {
@@ -703,6 +705,7 @@ img {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    text-align: left;
 }
 
 .photo-grid {
@@ -713,11 +716,11 @@ img {
 .photo-item {
     width: 100%;
     margin-bottom: 24px;
-    border-radius: 4px;
-    /* Screenshot shows slight radius or none */
+    border-radius: var(--border-radius);
     break-inside: avoid;
     display: block;
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 .photo-item:hover {
@@ -727,7 +730,12 @@ img {
 .photo-item img {
     width: 100%;
     display: block;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
@@ -776,6 +784,7 @@ img {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    text-align: left;
 }
 
 .logos-grid {
@@ -788,25 +797,27 @@ img {
 .logo-item {
     background: transparent;
     padding: 0;
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     text-align: center;
     transition: transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
-}
-
-.logo-item:hover {
-    transform: translateY(-5px);
+    position: relative;
 }
 
 .logo-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: var(--border-radius);
     transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: translateY(-5px);
 }
 
 .logo-item:hover img {
@@ -818,19 +829,11 @@ img {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
     }
-    
-    .logo-item {
-        height: 130px;
-    }
 }
 
 @media (max-width: 480px) {
     .logos-grid {
         grid-template-columns: 1fr;
-    }
-
-    .logo-item {
-        height: 120px;
     }
 }
 
@@ -916,9 +919,21 @@ img {
 
 .services-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 60px;
     text-align: center;
+}
+
+@media (max-width: 900px) {
+    .services-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .services-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-item {
@@ -930,6 +945,12 @@ img {
     color: var(--text-primary);
     margin-bottom: 24px;
     opacity: 0.8;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.4s ease;
+}
+
+.service-item:hover .service-icon {
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 .service-name {
@@ -965,6 +986,7 @@ img {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    text-align: left;
 }
 
 .videos-grid {
@@ -1096,7 +1118,7 @@ img {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 .contact-form {
@@ -1171,6 +1193,7 @@ button:disabled {
     max-width: 800px;
     margin: 0 auto;
     font-weight: 400;
+    will-change: opacity, transform, filter;
 }
 
 @media (max-width: 768px) {
@@ -1188,11 +1211,12 @@ button:disabled {
 }
 
 .footer-inner {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 56px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-bottom: 56px;
+    width: 100%;
 }
 
 .footer-cta {
@@ -1260,12 +1284,28 @@ button:disabled {
     flex-direction: column;
     gap: 26px;
     padding-top: 8px;
+    width: 100%;
+    align-items: center;
+}
+
+.footer-availability {
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    text-align: center;
+    width: 100%;
+    display: block;
 }
 
 .footer-nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .footer-nav-link {
@@ -1280,7 +1320,9 @@ button:disabled {
 }
 
 .social-links.footer-social {
-    gap: 16px;
+    gap: 20px;
+    justify-content: center;
+    display: flex;
 }
 
 .footer-container {
@@ -1289,35 +1331,23 @@ button:disabled {
     align-items: center;
 }
 
-/* Footer Content Styling */
-.footer-contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align left */
-    text-align: left; /* Align text left */
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.footer-title {
-    font-size: 2.5rem;
-    font-family: var(--font-family);
-    font-weight: 500;
-    margin: 0;
-    color: #FFFFFF;
-}
+/* Footer Content Styling - Removed unused legacy styles */
+/* .footer-contact-container, .footer-title removed */
 
 .footer-details {
     display: flex;
-    flex-direction: column; /* Stack vertically */
-    gap: 30px; /* Gap between items */
-    justify-content: flex-start;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    text-align: center;
 }
 
 .footer-detail {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    align-items: center;
+    text-align: center;
 }
 
 .footer-detail-label {
@@ -1346,7 +1376,7 @@ button:disabled {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 40px;
     display: flex;
-    justify-content: flex-start; /* Align left for consistency */
+    justify-content: center;
 }
 
 .copyright {
@@ -1361,7 +1391,7 @@ button:disabled {
 
 .social-links a {
     color: #86868B;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     transition: color 0.2s ease;
 }
 
@@ -1371,8 +1401,6 @@ button:disabled {
 
 @media (max-width: 768px) {
     .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 34px;
         padding-bottom: 40px;
     }
 
@@ -1397,14 +1425,16 @@ button:disabled {
 /* Animations */
 .fade-in-section {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-    will-change: opacity, transform;
+    transform: translateY(50px);
+    filter: blur(10px);
+    transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), filter 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: opacity, transform, filter;
 }
 
 .fade-in-section.is-visible {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
 }
 
 /* Modal Styles */
@@ -1662,4 +1692,69 @@ button:disabled {
         opacity: 1;
         background: rgba(0, 0, 0, 0.3);
     }
+}
+
+/* Laptop Mockup Styles */
+.laptop-wrapper {
+    background: transparent !important; /* Override default card background */
+    box-shadow: none !important; /* Override default shadow */
+    overflow: visible !important; /* Allow frame to stick out if needed */
+    aspect-ratio: auto !important; /* Let content dictate size */
+    max-height: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+}
+
+.laptop-wrapper:hover {
+    transform: none !important; /* Disable hover lift for this specific item if desired, or keep it */
+    box-shadow: none !important;
+}
+
+.laptop-wrapper::after {
+    display: none !important; /* Remove gradient overlay */
+}
+
+.laptop-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limit size */
+}
+
+.laptop-frame {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+    pointer-events: none; /* Allow clicks to pass through to screen */
+    border: none !important; /* Remove any border from default styles */
+    border-radius: 0 !important;
+}
+
+.laptop-screen {
+    position: absolute;
+    top: 11.3%; /* Tuned for MacBook Pro 14 notch/bezel */
+    left: 12.2%;
+    width: 75.6%;
+    height: 83.2%;
+    z-index: 1;
+    background-color: #000; /* Screen background */
+    overflow: hidden;
+    border-radius: 2px; /* Slight radius for screen corners */
+}
+
+/* Adjust the scroll container inside the laptop screen */
+.laptop-screen .web-design-scroll-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0; /* Remove border radius as the screen container handles it */
+}
+
+.laptop-screen img {
+    border: none !important; /* Remove border from image */
+    border-radius: 0 !important;
+    width: 100%;
+    height: auto;
 }

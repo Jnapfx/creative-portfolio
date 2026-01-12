@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logos: [
             { src: 'assets/portfolio/logos/logo_delila.png', title: 'Logo Delila', description: 'Brand identity design for Delila.' },
             { src: 'assets/portfolio/logos/logo_escuela_de_cine.jpg', title: 'Logo Escuela De Cine', description: 'Logo design for a film school.' },
-            { src: 'assets/portfolio/logos/logo_lucho.png', title: 'Logo Lucho', description: 'Personal branding logo design.' },
+            { src: 'assets/portfolio/print/fondo_negro.png', title: 'Logo Lucho', description: 'Personal branding logo design.' },
             { src: 'assets/portfolio/logos/logo_malcan.jpg', title: 'Logo Malcan', description: 'Corporate identity for Malcan.' },
             { src: 'assets/portfolio/logos/logo_pelvic_floor.jpg', title: 'Logo Pelvic Floor', description: 'Medical practice logo design.' },
             { src: 'assets/portfolio/logos/logo_tactical.jpg', title: 'Logo Tactical', description: 'Tactical gear brand logo.' }
@@ -412,4 +412,48 @@ document.addEventListener('DOMContentLoaded', () => {
             interactivePhotos.forEach(photo => photo.classList.remove('active'));
         }
     });
+
+    // Intro Work Scroll Animation
+    const introSection = document.querySelector('.intro-work');
+    const introText = document.querySelector('.intro-work-text');
+
+    if (introSection && introText) {
+        // Initial state
+        introText.style.opacity = '0';
+        introText.style.transform = 'translateY(40px)';
+        introText.style.filter = 'blur(10px)';
+        introText.style.transition = 'opacity 0.1s linear, transform 0.1s linear, filter 0.1s linear';
+
+        const updateIntroAnimation = () => {
+            const rect = introSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Define start and end points for the animation
+            const start = windowHeight * 0.85;
+            const end = windowHeight * 0.35;
+            
+            let progress = (start - rect.top) / (start - end);
+            progress = Math.max(0, Math.min(1, progress));
+            
+            // Apply styles
+            const opacity = progress;
+            const translateY = 40 * (1 - progress);
+            const blur = 10 * (1 - progress);
+            
+            introText.style.opacity = opacity;
+            introText.style.transform = `translateY(${translateY}px)`;
+            introText.style.filter = `blur(${blur}px)`;
+        };
+
+        window.addEventListener('scroll', () => {
+             window.requestAnimationFrame(updateIntroAnimation);
+        }, { passive: true });
+        
+        window.addEventListener('resize', () => {
+             window.requestAnimationFrame(updateIntroAnimation);
+        }, { passive: true });
+        
+        // Initial call
+        updateIntroAnimation();
+    }
 });
