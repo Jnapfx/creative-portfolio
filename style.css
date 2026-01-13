@@ -467,7 +467,7 @@ img {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 253, 250, 0.78);
+    background: rgba(250, 247, 244, 0.85); /* Increased opacity to match screenshot faded look */
     z-index: 1;
 }
 
@@ -490,8 +490,7 @@ img {
 }
 
 .hero-title {
-    font-family: var(--font-family);
-    /* Reverted to Inter */
+    font-family: var(--font-family); /* Reverted to Inter/Sans-serif as per screenshot */
     font-size: 6rem;
     line-height: 1;
     margin-bottom: 60px;
@@ -499,7 +498,6 @@ img {
     -webkit-text-fill-color: initial;
     color: rgba(0, 0, 0, 0.4);
     font-weight: 600;
-    /* Restored font weight */
 }
 
 .hero-footer {
@@ -557,6 +555,63 @@ img {
     max-width: none;
     object-fit: cover;
     pointer-events: none;
+}
+
+/* Desktop Hero Layout - Centered Overlay */
+@media (min-width: 769px) {
+    .hero-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 900px;
+        text-align: center;
+        align-items: center;
+        padding: 0;
+        z-index: 2;
+    }
+
+    .hero-title {
+        font-size: 5rem; /* Further reduced */
+        margin-bottom: 60px;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-footer {
+        width: 100%;
+        max-width: 400px; /* Reduced width to bring items closer and inside image bounds */
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    .hero-subtitle {
+        text-align: left;
+    }
+
+    .hero-media {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        z-index: 0;
+        opacity: 1; /* Let the overlay handle the fade */
+    }
+
+    .hero-video {
+        object-fit: contain; /* Ensure full video is visible without stretching/cropping */
+        transform: scale(1.35); /* Increased scale for larger appearance */
+    }
+
+    /* Ensure overlay is visible */
+    .hero-container::before {
+        display: block;
+        background: rgba(250, 247, 244, 0.85);
+    }
 }
 
 /* Selected Work */
@@ -1705,37 +1760,8 @@ button:disabled {
     padding: 0 !important;
 }
 
-/* Desktop Hero Layout Adjustment */
-@media (min-width: 769px) {
-    .hero-container {
-        justify-content: space-between;
-        padding: 0 40px;
-    }
-
-    .hero-content {
-        width: 45%;
-        align-items: center;
-        padding: 0;
-        text-align: center;
-    }
-
-    .hero-media {
-        position: relative;
-        inset: auto;
-        width: 50%;
-        height: 85vh; /* Ensure it takes significant height */
-        z-index: 1;
-        border-radius: var(--border-radius);
-    }
-    
-    .hero-video {
-        border-radius: var(--border-radius);
-    }
-
-    .hero-container::before {
-        display: none; /* Remove overlay on desktop split view */
-    }
-}
+/* Desktop Hero Layout Adjustment - REMOVED to match mobile overlay style */
+/* @media (min-width: 769px) { ... } block removed */
 
 .laptop-wrapper:hover {
     transform: none !important; /* Disable hover lift for this specific item if desired, or keep it */
