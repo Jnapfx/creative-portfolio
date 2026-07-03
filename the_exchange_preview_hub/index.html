@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>The Exchange Pilot Webpage Mockups</title>
+  <style>
+    :root {
+      --navy: #0b1f36;
+      --blue: #1577b8;
+      --cyan: #18b6cf;
+      --teal: #0b8f94;
+      --bg: #f6f9fb;
+      --card: #ffffff;
+      --muted: #5f7183;
+      --border: #dbe7ef;
+      --shadow: 0 18px 45px rgba(11,31,54,.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--navy);
+      background: radial-gradient(circle at top right, rgba(24,182,207,.16), transparent 32%), var(--bg);
+      line-height: 1.55;
+    }
+    .topbar {
+      background: var(--navy);
+      color: #fff;
+      padding: 18px 24px;
+      border-bottom: 4px solid var(--cyan);
+    }
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: .02em;
+      font-size: 18px;
+    }
+    .tag {
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(21,119,184,.10);
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      letter-spacing: -.05em;
+      line-height: .95;
+      margin: 22px 0 18px;
+      max-width: 900px;
+    }
+    .intro {
+      max-width: 780px;
+      font-size: 19px;
+      color: var(--muted);
+      margin: 0 0 36px;
+    }
+    .notice {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.72);
+      border-radius: 18px;
+      padding: 18px 20px;
+      color: #405467;
+      margin: 0 0 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 34px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .label {
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 30px;
+      line-height: 1.08;
+      margin: 0 0 14px;
+      letter-spacing: -.03em;
+    }
+    p { margin-top: 0; }
+    ul {
+      padding-left: 20px;
+      color: var(--muted);
+      margin: 18px 0 26px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 14px 20px;
+      box-shadow: 0 10px 24px rgba(21,119,184,.22);
+    }
+    .button:hover { transform: translateY(-1px); }
+    .compare {
+      margin-top: 32px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .compare h3 {
+      margin: 0;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: var(--navy); }
+    td { color: var(--muted); }
+    footer {
+      padding: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 800px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      main { padding: 48px 18px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
+      th, td { display: block; width: 100%; }
+      tr { display: block; border-bottom: 1px solid var(--border); }
+      td, th { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">CT Tech Hub × The Exchange</div>
+      <div class="tag">Early webpage mockups for committee review</div>
+    </div>
+  </header>
+
+  <main>
+    <span class="eyebrow">Pilot Preview</span>
+    <h1>The Exchange Pilot Webpage Mockups</h1>
+    <p class="intro">Below are two early concept directions for review. Both are rough drafts intended to help the committee compare the overall webpage approach before final design and functionality are refined.</p>
+
+    <div class="notice">
+      <strong>Review note:</strong> Draft A keeps the pilot more informational and form-driven. Draft B makes selected pilot opportunities more visible while still keeping the process guided and structured.
+    </div>
+
+    <section class="grid" aria-label="Mockup options">
+      <article class="card">
+        <div>
+          <div class="label">Option A</div>
+          <h2>Informational / Form-Based Direction</h2>
+          <p>This version presents The Exchange as an official pilot landing page. It explains the program, keeps opportunities high-level, and guides users to submit interest through forms.</p>
+          <ul>
+            <li>More controlled and committee-safe</li>
+            <li>No public opportunity listings</li>
+            <li>Best for a guided pilot intake process</li>
+          </ul>
+        </div>
+        <a class="button" href="./draft-a/">View Draft A</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="label">Option B</div>
+          <h2>Opportunities Visible Direction</h2>
+          <p>This version shows selected pilot opportunity preview cards so users can better understand what they may engage with, while still keeping follow-up managed by the program team.</p>
+          <ul>
+            <li>More visual and user-facing</li>
+            <li>Shows sample pilot opportunity cards</li>
+            <li>Best for helping users quickly understand value</li>
+          </ul>
+        </div>
+        <a class="button" href="./draft-b/">View Draft B</a>
+      </article>
+    </section>
+
+    <section class="compare" aria-label="Comparison table">
+      <h3>Quick Comparison</h3>
+      <table>
+        <tbody>
+          <tr>
+            <th>Draft A</th>
+            <td>Explains the pilot and uses forms as the main interaction. Opportunities are discussed as general categories.</td>
+          </tr>
+          <tr>
+            <th>Draft B</th>
+            <td>Shows selected opportunity previews/cards so visitors can browse examples before expressing interest.</td>
+          </tr>
+          <tr>
+            <th>Decision Point</th>
+            <td>Whether the committee prefers a more controlled informational page or a more visible opportunity showcase.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    Prepared for discussion purposes only. Early concept mockups, not final production pages.
+  </footer>
+</body>
+</html>
