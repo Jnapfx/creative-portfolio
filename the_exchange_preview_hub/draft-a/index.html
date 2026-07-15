@@ -1,359 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Exchange | CT Tech Hub Pilot</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            hub: {
-              navy: '#083344',
-              ink: '#102A43',
-              cyan: '#0EA5B7',
-              cyanDark: '#087B8B',
-              mint: '#DDF7F2',
-              sky: '#EAF8FB',
-              sand: '#F6F3EE',
-              line: '#D7E5E8',
-              slate: '#526676'
-            }
-          },
-          fontFamily: {
-            display: ['Hanken Grotesk', 'sans-serif'],
-            body: ['Inter', 'sans-serif']
-          },
-          boxShadow: {
-            soft: '0 18px 50px rgba(8, 51, 68, 0.10)',
-            card: '0 8px 28px rgba(8, 51, 68, 0.08)'
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fbfaf7;
-      color: #102A43;
-      overflow-x: hidden;
-    }
-    .section-pattern {
-      background-image:
-        radial-gradient(circle at 20% 20%, rgba(14, 165, 183, 0.09), transparent 28%),
-        radial-gradient(circle at 80% 0%, rgba(221, 247, 242, 0.8), transparent 30%),
-        linear-gradient(135deg, rgba(255,255,255,0.9), rgba(234,248,251,0.72));
-    }
-    .soft-grid {
-      background-image: linear-gradient(rgba(8, 51, 68, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(8, 51, 68, 0.045) 1px, transparent 1px);
-      background-size: 34px 34px;
-    }
-    .connector-line {
-      position: absolute;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(14,165,183,0.35), transparent);
-      transform-origin: left center;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Exchange connects regional employers with students and early-career tech talent through applied work-based learning opportunities.">
+  <title>The Exchange | SWCT Tech Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Top Navigation -->
-  <header class="fixed top-0 z-50 w-full border-b border-hub-line/80 bg-white/90 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-4 md:px-10">
-      <a href="#" class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-hub-navy text-white">
-          <span class="material-symbols-outlined text-[21px]">hub</span>
-        </div>
-        <div class="leading-tight">
-          <p class="font-display text-lg font-extrabold tracking-tight text-hub-navy">CT Tech Hub</p>
-          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-hub-cyanDark">The Exchange Pilot</p>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="The Exchange home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>The Exchange</strong>
+          <small>SWCT Tech Hub</small>
+        </span>
       </a>
-      <nav class="hidden items-center gap-8 md:flex">
-        <a class="border-b-2 border-hub-cyan pb-1 text-sm font-bold text-hub-navy" href="#">Home</a>
-        <a class="text-sm font-semibold text-hub-slate hover:text-hub-cyanDark" href="#">The Partnership</a>
-        <a class="text-sm font-semibold text-hub-slate hover:text-hub-cyanDark" href="#">For Employers</a>
-        <a class="text-sm font-semibold text-hub-slate hover:text-hub-cyanDark" href="#">Tech Careers</a>
-        <a class="text-sm font-semibold text-hub-slate hover:text-hub-cyanDark" href="#">Resources</a>
-      </nav>
-      <a href="#submit" class="hidden rounded-full bg-hub-cyan px-5 py-2.5 text-sm font-bold text-white shadow-card transition hover:bg-hub-cyanDark sm:inline-flex">Submit Interest</a>
-      <button class="md:hidden rounded-full border border-hub-line p-2 text-hub-navy" aria-label="Open navigation">
-        <span class="material-symbols-outlined">menu</span>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
       </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#businesses">Businesses</a>
+        <a href="#applicants">Applicants</a>
+        <a href="#how-it-works">How It Works</a>
+        <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSco4Kxa0eZ4RQufsUt5GV_s9_rcIC5j_H87R6EBUiwMVIWEHw/viewform?usp=sharing&ouid=100522455523658235827" target="_blank" rel="noopener">Submit an Opportunity</a>
+      </nav>
     </div>
   </header>
 
-  <main class="pt-[73px]">
-    <!-- Hero -->
-    <section class="section-pattern soft-grid relative overflow-hidden border-b border-hub-line/70">
-      <div class="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-14 px-4 py-20 md:px-10 lg:grid-cols-2 lg:py-24">
-        <div class="relative z-10">
-          <span class="inline-flex items-center gap-2 rounded-full border border-hub-line bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-hub-cyanDark shadow-card">
-            <span class="h-2 w-2 rounded-full bg-hub-cyan"></span>
-            A CT Tech Hub Pilot Initiative
-          </span>
-          <h1 class="mt-7 font-display text-5xl font-extrabold leading-[0.98] tracking-[-0.04em] text-hub-navy md:text-7xl">
-            The Exchange
-          </h1>
-          <p class="mt-5 max-w-xl font-display text-2xl font-semibold leading-tight text-hub-cyanDark md:text-3xl">
-            Connecting talent, employers, and real-world experience.
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Southwest Connecticut Tech Hub</p>
+          <h1>Real Work.<br>Real Experience.<br><span>Regional Talent.</span></h1>
+          <p class="hero-intro">
+            The Exchange is a regional, employer-driven marketplace connecting businesses
+            with early-career tech talent through applied work-based learning opportunities.
           </p>
-          <p class="mt-6 max-w-xl text-lg leading-8 text-hub-slate">
-            A guided pilot designed to help regional employers, emerging talent, and community partners connect through a simple submission and review process.
+          <div class="button-row">
+            <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSco4Kxa0eZ4RQufsUt5GV_s9_rcIC5j_H87R6EBUiwMVIWEHw/viewform?usp=sharing&ouid=100522455523658235827" target="_blank" rel="noopener">
+              Submit an Opportunity
+            </a>
+            <a class="button button-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSfRYo6pgUQsIBrTIhKknnrYG1G-Yk2tPBesPFSG4Wg1rphSHg/viewform?usp=sharing&ouid=100522455523658235827" target="_blank" rel="noopener">
+              Express Interest
+            </a>
+          </div>
+          <p class="microcopy">Internships · Project-based work · Short-term roles</p>
+        </div>
+
+        <aside class="hero-card" aria-label="The Exchange overview">
+
+          <p class="card-kicker">A practical regional pathway</p>
+          <h2>Skills become marketable through experience.</h2>
+          <p>
+            Employers gain support for real projects. Emerging talent gains structured,
+            time-bound experience with clear expectations and deliverables.
           </p>
-          <div class="mt-9 flex flex-wrap gap-4">
-            <a href="#submit" class="rounded-full bg-hub-cyan px-8 py-3.5 text-base font-bold text-white shadow-soft transition hover:bg-hub-cyanDark">Submit Interest</a>
-            <a href="#how" class="rounded-full border border-hub-cyan bg-white px-8 py-3.5 text-base font-bold text-hub-cyanDark transition hover:bg-hub-sky">Learn How It Works</a>
+          <div class="stat-row">
+            <div><strong>2</strong><span>simple intake paths</span></div>
+            <div><strong>1</strong><span>coordinated process</span></div>
           </div>
-          <p class="mt-5 flex items-center gap-2 text-sm font-medium text-hub-slate">
-            <span class="material-symbols-outlined text-hub-cyanDark" style="font-variation-settings:'FILL' 1">verified</span>
-            Not a public job board. A coordinated pathway for pilot participation.
-          </p>
-        </div>
-
-        <!-- Right Visual -->
-        <div class="relative mx-auto flex h-[460px] w-full max-w-[540px] items-center justify-center">
-          <div class="absolute inset-8 rounded-[2rem] border border-hub-line bg-white/70 shadow-soft backdrop-blur"></div>
-          <div class="connector-line left-[49%] top-[28%] w-[150px] rotate-[25deg]"></div>
-          <div class="connector-line left-[22%] top-[58%] w-[170px] rotate-[-20deg]"></div>
-          <div class="connector-line left-[51%] top-[62%] w-[150px] rotate-[-28deg]"></div>
-
-          <div class="relative z-20 flex h-40 w-40 items-center justify-center rounded-full border border-hub-line bg-white text-center shadow-soft">
-            <div>
-              <p class="text-xs font-extrabold uppercase tracking-[0.22em] text-hub-cyanDark">The</p>
-              <p class="font-display text-2xl font-extrabold tracking-tight text-hub-navy">Exchange</p>
-              <p class="mt-1 text-xs font-semibold text-hub-slate">Pilot</p>
-            </div>
-          </div>
-
-          <div class="absolute left-6 top-14 z-10 rounded-2xl border border-hub-line bg-white p-5 shadow-card">
-            <div class="flex items-center gap-3">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-hub-sky text-hub-cyanDark"><span class="material-symbols-outlined">business</span></div>
-              <div><p class="font-bold text-hub-navy">Employers</p><p class="text-xs text-hub-slate">Submit needs</p></div>
-            </div>
-          </div>
-
-          <div class="absolute bottom-16 left-3 z-10 rounded-2xl border border-hub-line bg-white p-5 shadow-card">
-            <div class="flex items-center gap-3">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-hub-mint text-hub-cyanDark"><span class="material-symbols-outlined">groups</span></div>
-              <div><p class="font-bold text-hub-navy">Talent</p><p class="text-xs text-hub-slate">Express interest</p></div>
-            </div>
-          </div>
-
-          <div class="absolute right-4 top-28 z-10 rounded-2xl border border-hub-line bg-white p-5 shadow-card">
-            <div class="flex items-center gap-3">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-hub-sand text-hub-cyanDark"><span class="material-symbols-outlined">diversity_3</span></div>
-              <div><p class="font-bold text-hub-navy">Partners</p><p class="text-xs text-hub-slate">Coordinate support</p></div>
-            </div>
-          </div>
-
-          <div class="absolute bottom-8 right-10 z-10 max-w-[210px] rounded-2xl border border-hub-line bg-hub-navy p-5 text-white shadow-card">
-            <p class="text-xs font-bold uppercase tracking-[0.18em] text-hub-mint">Program Team</p>
-            <p class="mt-2 text-sm leading-5 text-white/85">Reviews submissions and guides follow-up.</p>
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="bg-white px-4 py-18 md:px-10 md:py-24">
-      <div class="mx-auto max-w-[1280px]">
-        <div class="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-hub-cyanDark">About the pilot</p>
-            <h2 class="mt-4 font-display text-4xl font-extrabold tracking-tight text-hub-navy md:text-5xl">A simple, guided way to explore real-world connections.</h2>
-          </div>
-          <div class="rounded-[2rem] border border-hub-line bg-hub-sky/70 p-8 shadow-card">
-            <p class="text-lg leading-8 text-hub-slate">
-              The Exchange is being developed as a pilot to help employers, students, early-career professionals, and community partners connect around workplace learning, career exposure, and project-based experiences. During the pilot phase, submissions are reviewed by the program team before any follow-up or introduction takes place.
-            </p>
-            <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <div class="rounded-2xl bg-white p-5 shadow-card"><p class="font-display text-3xl font-extrabold text-hub-cyanDark">01</p><p class="mt-2 text-sm font-semibold text-hub-slate">Submit interest</p></div>
-              <div class="rounded-2xl bg-white p-5 shadow-card"><p class="font-display text-3xl font-extrabold text-hub-cyanDark">02</p><p class="mt-2 text-sm font-semibold text-hub-slate">Team review</p></div>
-              <div class="rounded-2xl bg-white p-5 shadow-card"><p class="font-display text-3xl font-extrabold text-hub-cyanDark">03</p><p class="mt-2 text-sm font-semibold text-hub-slate">Guided follow-up</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section id="how" class="bg-hub-sand px-4 py-18 md:px-10 md:py-24">
-      <div class="mx-auto max-w-[1280px]">
-        <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-hub-cyanDark">How the pilot works</p>
-          <h2 class="mt-4 font-display text-4xl font-extrabold tracking-tight text-hub-navy md:text-5xl">Designed for clarity, not public listings.</h2>
-          <p class="mt-5 text-lg leading-8 text-hub-slate">The first draft keeps the process form-driven so the committee can review interest without displaying specific opportunities publicly.</p>
-        </div>
-        <div class="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div class="rounded-[2rem] border border-hub-line bg-white p-8 shadow-card">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-hub-sky text-hub-cyanDark"><span class="material-symbols-outlined">edit_note</span></div>
-            <h3 class="mt-6 font-display text-2xl font-bold text-hub-navy">Submit Interest</h3>
-            <p class="mt-3 leading-7 text-hub-slate">Employers, talent, and partners complete a short form based on their role and goals.</p>
-          </div>
-          <div class="rounded-[2rem] border border-hub-line bg-white p-8 shadow-card">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-hub-mint text-hub-cyanDark"><span class="material-symbols-outlined">fact_check</span></div>
-            <h3 class="mt-6 font-display text-2xl font-bold text-hub-navy">Program Review</h3>
-            <p class="mt-3 leading-7 text-hub-slate">The Exchange team reviews submissions and identifies potential alignment with pilot priorities.</p>
-          </div>
-          <div class="rounded-[2rem] border border-hub-line bg-white p-8 shadow-card">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-hub-sand text-hub-cyanDark"><span class="material-symbols-outlined">handshake</span></div>
-            <h3 class="mt-6 font-display text-2xl font-bold text-hub-navy">Follow-Up & Connection</h3>
-            <p class="mt-3 leading-7 text-hub-slate">Qualified submissions receive next-step guidance, follow-up questions, or introductions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Who this is for -->
-    <section class="bg-white px-4 py-18 md:px-10 md:py-24">
-      <div class="mx-auto max-w-[1280px]">
-        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div class="max-w-2xl">
-            <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-hub-cyanDark">Who this is for</p>
-            <h2 class="mt-4 font-display text-4xl font-extrabold tracking-tight text-hub-navy md:text-5xl">Three pathways into the pilot.</h2>
-          </div>
-          <p class="max-w-md text-lg leading-8 text-hub-slate">Each audience has a clear form-based call to action instead of a public marketplace experience.</p>
-        </div>
-        <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <article class="group rounded-[2rem] border border-hub-line bg-white p-8 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-hub-sky text-hub-cyanDark"><span class="material-symbols-outlined">corporate_fare</span></div>
-            <h3 class="mt-7 font-display text-2xl font-bold text-hub-navy">Employers</h3>
-            <p class="mt-3 leading-7 text-hub-slate">Share areas of interest, potential workplace learning needs, or project ideas for review by the program team.</p>
-            <a href="#submit" class="mt-8 inline-flex items-center gap-2 font-bold text-hub-cyanDark">Employer Interest Form <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-          </article>
-          <article class="group rounded-[2rem] border border-hub-line bg-white p-8 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-hub-mint text-hub-cyanDark"><span class="material-symbols-outlined">person_search</span></div>
-            <h3 class="mt-7 font-display text-2xl font-bold text-hub-navy">Students & Emerging Talent</h3>
-            <p class="mt-3 leading-7 text-hub-slate">Submit your background, interests, and goals so the program team can understand potential alignment.</p>
-            <a href="#submit" class="mt-8 inline-flex items-center gap-2 font-bold text-hub-cyanDark">Talent Interest Form <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-          </article>
-          <article class="group rounded-[2rem] border border-hub-line bg-white p-8 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-hub-sand text-hub-cyanDark"><span class="material-symbols-outlined">diversity_3</span></div>
-            <h3 class="mt-7 font-display text-2xl font-bold text-hub-navy">Community & Education Partners</h3>
-            <p class="mt-3 leading-7 text-hub-slate">Help coordinate outreach, identify talent pathways, and align pilot participation with regional workforce needs.</p>
-            <a href="#submit" class="mt-8 inline-flex items-center gap-2 font-bold text-hub-cyanDark">Partner Interest Form <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Opportunity areas -->
-    <section class="bg-hub-navy px-4 py-18 text-white md:px-10 md:py-24">
-      <div class="mx-auto max-w-[1280px]">
-        <div class="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div>
-            <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-hub-mint">Opportunity areas</p>
-            <h2 class="mt-4 font-display text-4xl font-extrabold tracking-tight md:text-5xl">Types of opportunities we’re exploring.</h2>
-            <p class="mt-5 text-lg leading-8 text-white/75">This section intentionally stays high-level. It explains the kind of activity The Exchange may support without exposing specific opportunities, employer names, deadlines, or project details.</p>
-          </div>
-          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-white/10 bg-white/8 p-6"><span class="material-symbols-outlined text-hub-mint">work_history</span><h3 class="mt-4 font-display text-xl font-bold">Workplace learning experiences</h3></div>
-            <div class="rounded-2xl border border-white/10 bg-white/8 p-6"><span class="material-symbols-outlined text-hub-mint">task_alt</span><h3 class="mt-4 font-display text-xl font-bold">Short-term project collaboration</h3></div>
-            <div class="rounded-2xl border border-white/10 bg-white/8 p-6"><span class="material-symbols-outlined text-hub-mint">visibility</span><h3 class="mt-4 font-display text-xl font-bold">Career exposure opportunities</h3></div>
-            <div class="rounded-2xl border border-white/10 bg-white/8 p-6"><span class="material-symbols-outlined text-hub-mint">emoji_objects</span><h3 class="mt-4 font-display text-xl font-bold">Employer-led challenges</h3></div>
-            <div class="rounded-2xl border border-white/10 bg-white/8 p-6"><span class="material-symbols-outlined text-hub-mint">psychology</span><h3 class="mt-4 font-display text-xl font-bold">Skill-building collaborations</h3></div>
-            <div class="rounded-2xl border border-white/10 bg-white/8 p-6"><span class="material-symbols-outlined text-hub-mint">location_city</span><h3 class="mt-4 font-display text-xl font-bold">Community innovation projects</h3></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why -->
-    <section class="bg-white px-4 py-18 md:px-10 md:py-24">
-      <div class="mx-auto max-w-[1280px]">
-        <div class="mx-auto max-w-3xl text-center">
-          <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-hub-cyanDark">Why The Exchange</p>
-          <h2 class="mt-4 font-display text-4xl font-extrabold tracking-tight text-hub-navy md:text-5xl">Built around the regional talent pipeline.</h2>
-        </div>
-        <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-[1.5rem] bg-hub-sky p-7"><span class="material-symbols-outlined text-hub-cyanDark">hub</span><h3 class="mt-4 font-bold text-hub-navy">Strengthens the tech ecosystem</h3><p class="mt-2 text-sm leading-6 text-hub-slate">Supports a more connected regional strategy for technology workforce growth.</p></div>
-          <div class="rounded-[1.5rem] bg-hub-mint p-7"><span class="material-symbols-outlined text-hub-cyanDark">groups</span><h3 class="mt-4 font-bold text-hub-navy">Connects employers and talent</h3><p class="mt-2 text-sm leading-6 text-hub-slate">Creates a simpler intake pathway for meaningful employer and talent engagement.</p></div>
-          <div class="rounded-[1.5rem] bg-hub-sand p-7"><span class="material-symbols-outlined text-hub-cyanDark">route</span><h3 class="mt-4 font-bold text-hub-navy">Coordinates partner alignment</h3><p class="mt-2 text-sm leading-6 text-hub-slate">Helps education and community partners align activity with industry demand.</p></div>
-          <div class="rounded-[1.5rem] bg-hub-sky p-7"><span class="material-symbols-outlined text-hub-cyanDark">trending_up</span><h3 class="mt-4 font-bold text-hub-navy">Creates a guided pilot model</h3><p class="mt-2 text-sm leading-6 text-hub-slate">Keeps the experience curated while the program team learns what works.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Assistant concept -->
-    <section class="bg-hub-sand px-4 py-18 md:px-10 md:py-24">
-      <div class="mx-auto grid max-w-[1040px] grid-cols-1 items-center gap-8 rounded-[2rem] border border-hub-line bg-white p-6 shadow-soft md:grid-cols-[1fr_360px] md:p-10">
+    <section class="section section-light" id="about">
+      <div class="container split-layout">
         <div>
-          <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-hub-cyanDark">Optional support concept</p>
-          <h2 class="mt-4 font-display text-3xl font-extrabold tracking-tight text-hub-navy md:text-4xl">Need help choosing the right form?</h2>
-          <p class="mt-4 text-lg leading-8 text-hub-slate">A simple assistant could help visitors understand The Exchange, identify which interest form fits them, and answer basic questions using approved pilot information.</p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            <span class="rounded-full bg-hub-sky px-4 py-2 text-xs font-bold text-hub-cyanDark">Which form should I use?</span>
-            <span class="rounded-full bg-hub-sky px-4 py-2 text-xs font-bold text-hub-cyanDark">What happens after I submit?</span>
-            <span class="rounded-full bg-hub-sky px-4 py-2 text-xs font-bold text-hub-cyanDark">Who can participate?</span>
-          </div>
+          <p class="section-label">What is The Exchange?</p>
+          <h2>A coordinated pathway—not another job board.</h2>
         </div>
-        <div class="overflow-hidden rounded-3xl border border-hub-line bg-white shadow-card">
-          <div class="flex items-center justify-between bg-hub-navy px-5 py-4 text-white">
-            <div class="flex items-center gap-3">
-              <div class="flex h-9 w-9 items-center justify-center rounded-full bg-hub-mint text-hub-navy"><span class="material-symbols-outlined">smart_toy</span></div>
-              <div><p class="text-sm font-bold">Exchange Assistant</p><p class="text-xs text-white/65">Pilot information support</p></div>
-            </div>
-            <span class="material-symbols-outlined text-white/70">more_horiz</span>
-          </div>
-          <div class="space-y-4 p-5">
-            <div class="max-w-[85%] rounded-2xl rounded-tl-sm bg-hub-sky p-4 text-sm leading-6 text-hub-ink">Hi! I can help you understand the pilot and point you to the right interest form.</div>
-            <div class="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-hub-cyan p-4 text-sm leading-6 text-white">I’m an employer with a possible project idea.</div>
-            <div class="max-w-[85%] rounded-2xl rounded-tl-sm bg-hub-sky p-4 text-sm leading-6 text-hub-ink">Great — the Employer Interest Form is the best place to start.</div>
-          </div>
+        <div class="body-copy">
+          <p>
+            The Exchange connects employers, students, recent graduates, program completers,
+            and early-career talent through internships, short-term roles, and project-based engagements.
+          </p>
+          <p>
+            It is not a staffing service or résumé database. It is a structured approach to meaningful,
+            time-bound work experiences that benefit both employers and emerging talent.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="submit" class="section-pattern soft-grid px-4 py-20 md:px-10 md:py-24">
-      <div class="mx-auto max-w-[980px] rounded-[2rem] border border-hub-line bg-white/88 p-8 text-center shadow-soft backdrop-blur md:p-12">
-        <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-hub-cyanDark">Get started</p>
-        <h2 class="mt-4 font-display text-4xl font-extrabold tracking-tight text-hub-navy md:text-5xl">Interested in participating in the pilot?</h2>
-        <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-hub-slate">Submit interest and the program team will review your information as part of the pilot process.</p>
-        <div class="mt-9 flex flex-wrap justify-center gap-4">
-          <a class="rounded-full bg-hub-cyan px-7 py-3.5 font-bold text-white shadow-card transition hover:bg-hub-cyanDark" href="#">Submit Employer Interest</a>
-          <a class="rounded-full border border-hub-cyan bg-white px-7 py-3.5 font-bold text-hub-cyanDark transition hover:bg-hub-sky" href="#">Submit Talent Interest</a>
-          <a class="rounded-full border border-hub-cyan bg-white px-7 py-3.5 font-bold text-hub-cyanDark transition hover:bg-hub-sky" href="#">Submit Partner Interest</a>
+    <section class="section section-indigo" id="why">
+      <div class="container">
+        <div class="section-heading narrow">
+          <p class="section-label light-label">Why The Exchange?</p>
+          <h2>Closing the experience gap from both sides.</h2>
+          <p>
+            Early-career talent is trained and ready to contribute, but often lacks access to the applied
+            experience employers expect. At the same time, businesses have real projects and emerging
+            skills needs that can become meaningful learning opportunities.
+          </p>
         </div>
-        <p class="mt-6 text-sm text-hub-slate">Submissions will be reviewed by the program team before any follow-up or introduction.</p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-number">01</span>
+            <h3>Employer-defined work</h3>
+            <p>Projects are scoped around real needs, clear outcomes, timelines, and supervision.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">02</span>
+            <h3>Prepared regional talent</h3>
+            <p>Candidates are reviewed for skills, readiness, availability, and opportunity alignment.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">03</span>
+            <h3>Human-centered matching</h3>
+            <p>The Exchange team coordinates review, follow-up, matching, and learning across each cycle.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section audience-section" id="businesses">
+      <div class="container audience-grid">
+        <article class="audience-card business-card">
+          <p class="section-label">For Businesses</p>
+          <h2>Turn a real need into a structured learning opportunity.</h2>
+          <p>
+            Submit an internship, short-term role, or project-based engagement with clear deliverables,
+            skills, timing, supervision, and work environment.
+          </p>
+          <ul class="check-list">
+            <li>Software development</li>
+            <li>Data and analytics</li>
+            <li>Cybersecurity</li>
+            <li>Cloud and infrastructure</li>
+            <li>Product, UX, and IT support</li>
+          </ul>
+          <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSco4Kxa0eZ4RQufsUt5GV_s9_rcIC5j_H87R6EBUiwMVIWEHw/viewform?usp=sharing&ouid=100522455523658235827" target="_blank" rel="noopener">
+            Submit an Opportunity <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="audience-card applicant-card" id="applicants">
+          <p class="section-label">For Applicants</p>
+          <h2>Build hands-on experience with regional employers.</h2>
+          <p>
+            Students, recent graduates, program completers, and career changers can share their skills,
+            interests, availability, work preferences, résumé, and supporting links.
+          </p>
+          <p class="note">
+            Candidates do not apply directly to employers. The Exchange team reviews each profile
+            for readiness and alignment with available opportunities.
+          </p>
+          <a class="text-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfRYo6pgUQsIBrTIhKknnrYG1G-Yk2tPBesPFSG4Wg1rphSHg/viewform?usp=sharing&ouid=100522455523658235827" target="_blank" rel="noopener">
+            Express Interest <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-indigo" id="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label light-label">How It Works</p>
+          <h2>A simple path from interest to applied experience.</h2>
+        </div>
+
+        <ol class="process-grid">
+          <li>
+            <span>1</span>
+            <h3>Employers submit opportunities</h3>
+            <p>Businesses share an internship, project, or short-term role through the intake form.</p>
+          </li>
+          <li>
+            <span>2</span>
+            <h3>Candidates express interest</h3>
+            <p>Applicants submit skills, training, interests, availability, and supporting materials.</p>
+          </li>
+          <li>
+            <span>3</span>
+            <h3>The Exchange reviews for fit</h3>
+            <p>The team evaluates readiness, scope, supervision, and alignment on both sides.</p>
+          </li>
+          <li>
+            <span>4</span>
+            <h3>Matching begins</h3>
+            <p>Aligned candidates are surfaced to employers from a curated, pre-vetted pool.</p>
+          </li>
+          <li>
+            <span>5</span>
+            <h3>Work-based learning begins</h3>
+            <p>The selected candidate and employer begin a structured, time-bound engagement.</p>
+          </li>
+          <li>
+            <span>6</span>
+            <h3>Outcomes are documented</h3>
+            <p>Feedback helps improve the model for the next cycle.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="examples">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Opportunity Examples</p>
+          <h2>Applied projects that build skills and create value.</h2>
+        </div>
+        <div class="tag-cloud" aria-label="Example opportunity types">
+          <span>Business intelligence dashboards</span>
+          <span>Security policy review</span>
+          <span>Vulnerability scans</span>
+          <span>Marketing analytics</span>
+          <span>Workflow automation</span>
+          <span>Customer-facing features</span>
+          <span>Help desk improvements</span>
+          <span>Cloud monitoring</span>
+          <span>User research</span>
+          <span>Wireframing and product testing</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta-inner">
+        <div>
+          <p class="section-label light-label">Ready to get started?</p>
+          <h2>Begin with a simple intake form and a conversation.</h2>
+        </div>
+        <div class="button-row">
+          <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSco4Kxa0eZ4RQufsUt5GV_s9_rcIC5j_H87R6EBUiwMVIWEHw/viewform?usp=sharing&ouid=100522455523658235827" target="_blank" rel="noopener">
+            Submit an Opportunity
+          </a>
+          <a class="button button-outline-light" href="https://docs.google.com/forms/d/e/1FAIpQLSfRYo6pgUQsIBrTIhKknnrYG1G-Yk2tPBesPFSG4Wg1rphSHg/viewform?usp=sharing&ouid=100522455523658235827" target="_blank" rel="noopener">
+            Express Interest
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-hub-line bg-hub-navy px-4 py-12 text-white md:px-10">
-    <div class="mx-auto grid max-w-[1280px] grid-cols-1 gap-8 md:grid-cols-4">
-      <div class="md:col-span-2">
-        <p class="font-display text-2xl font-extrabold">The Exchange</p>
-        <p class="mt-3 max-w-md leading-7 text-white/70">A CT Tech Hub pilot concept designed to support regional talent, employer engagement, and coordinated workforce development.</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand footer-brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>The Exchange</strong>
+          <small>Southwest Connecticut Tech Hub</small>
+        </span>
       </div>
-      <div>
-        <h4 class="font-bold text-white">Explore</h4>
-        <ul class="mt-4 space-y-3 text-sm text-white/70">
-          <li><a href="#" class="hover:text-white">The Partnership</a></li>
-          <li><a href="#" class="hover:text-white">For Employers</a></li>
-          <li><a href="#" class="hover:text-white">Tech Careers</a></li>
-          <li><a href="#" class="hover:text-white">Resources</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-white">Contact</h4>
-        <ul class="mt-4 space-y-3 text-sm text-white/70">
-          <li>2 Landmark Square, Suite 108</li>
-          <li>Stamford, CT 06901</li>
-          <li>info@cttechhub.org</li>
-        </ul>
-      </div>
+      <p>Real Work. Real Experience. Regional Talent.</p>
+      <p class="footer-note">Pilot webpage preview</p>
     </div>
-    <div class="mx-auto mt-10 max-w-[1280px] border-t border-white/10 pt-6 text-sm text-white/55">© 2026 The Exchange / CT Tech Hub. Draft mockup for committee review.</div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
