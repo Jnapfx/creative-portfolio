@@ -210,7 +210,9 @@ button:focus-visible {
   text-transform: uppercase;
   letter-spacing: .16em;
   color: var(--violet);
-}
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 2px; }
 .hero .eyebrow { color: var(--teal); }
 .light-label { color: var(--teal); }
 
@@ -223,14 +225,16 @@ h1 {
   letter-spacing: -.065em;
 }
 h1 span { color: var(--turquoise); }
-.hero-title-white { color: var(--white) !important; }
-.hero-title-accent { color: var(--turquoise) !important; }
+.hero-title-white { color: var(--white) !important;
+  letter-spacing: -2px; }
+.hero-title-accent { color: var(--turquoise) !important;
+  letter-spacing: -2px; }
 .hero-brand-title {
   margin: 0 0 18px;
-  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-size: 44px;
   font-weight: 800;
   line-height: .95;
-  letter-spacing: -.055em;
+  letter-spacing: -4px;
 }
 
 
@@ -282,20 +286,6 @@ h1 span { color: var(--turquoise); }
 }
 .button-outline-light:hover {
   background: rgba(255,255,255,.12);
-}
-
-.microcopy {
-  margin: 22px 0 0;
-  font-size: .88rem;
-  color: rgba(255,255,255,.72);
-}
-
-.participation-note {
-  max-width: 660px;
-  margin: 12px 0 0;
-  font-size: .78rem;
-  line-height: 1.5;
-  color: rgba(255,255,255,.58);
 }
 
 @media (min-width: 921px) {
@@ -1058,10 +1048,11 @@ section#top .hero-copy h1 {
 }
 
 .hero-brand-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  margin-bottom: 10px;
+  font-size: clamp(2.35rem, 4vw, 4.2rem);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.05em;
+  margin-bottom: 18px;
 }
 
 #how-it-works .section-label {
@@ -1131,4 +1122,232 @@ section#top .hero-copy h1 {
 
 .site-footer .footer-note {
   color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Merged opportunity examples inside the business audience card */
+.business-examples {
+  margin: 26px 0 32px;
+}
+
+.examples-label {
+  margin: 0 0 14px;
+  color: var(--indigo);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.tag-cloud-compact {
+  gap: 9px;
+}
+
+.tag-cloud-compact span {
+  padding: .62rem .78rem;
+  font-size: .84rem;
+  line-height: 1.25;
+  box-shadow: none;
+}
+
+/* Ready to Get Started — white section background */
+.final-cta {
+  color: var(--indigo);
+  background: var(--white);
+}
+
+.final-cta .section-label,
+.final-cta .light-label {
+  color: var(--violet);
+}
+
+.final-cta h2 {
+  color: var(--indigo);
+}
+
+.final-cta .cta-note {
+  color: var(--muted);
+}
+
+.final-cta .button-outline-light {
+  color: var(--indigo);
+  border-color: rgba(34, 34, 100, .42);
+  background: transparent;
+}
+
+.final-cta .button-outline-light:hover {
+  color: var(--indigo);
+  border-color: var(--violet);
+  background: rgba(52, 52, 142, .07);
+}
+
+/* v33 — Hero text centered. No other sections changed. */
+section#top .hero-grid {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+section#top .hero-copy {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+section#top .hero-copy .eyebrow,
+section#top .hero-copy .hero-brand-title,
+section#top .hero-copy h1 {
+  text-align: center;
+}
+
+section#top .hero-copy .hero-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section#top .hero-copy .button-row {
+  justify-content: center;
+}
+
+/* v37 — Hero typography refinement only. */
+.preview-banner {
+  font-size: .68rem;
+}
+
+section#top .hero-copy .eyebrow {
+  font-size: .82rem;
+}
+
+section#top .hero-copy .hero-brand-title {
+  font-size: clamp(2.1rem, 3.2vw, 3.25rem);
+}
+
+section#top .hero-copy h1 {
+  font-size: clamp(3.75rem, 6.6vw, 5.5rem);
+}
+
+section#top .hero-copy .hero-intro {
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+}
+
+section#top .hero-copy .button {
+  font-size: .98rem;
+}
+
+@media (max-width: 620px) {
+  section#top .hero-copy .eyebrow {
+    font-size: .7rem;
+  }
+
+  section#top .hero-copy .hero-brand-title {
+    font-size: 2.15rem;
+  }
+
+  section#top .hero-copy h1 {
+    font-size: 48px;
+  }
+
+  section#top .hero-copy .hero-intro {
+    font-size: .98rem;
+  }
+
+  section#top .hero-copy .button {
+    font-size: .95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  section#top .hero-copy .hero-brand-title {
+    font-size: 1.95rem;
+  }
+
+  section#top .hero-copy h1 {
+    font-size: 43px;
+  }
+}
+
+/* v38 — left-aligned hero, refined word emphasis, banner restored. */
+section#top .hero-grid {
+  justify-items: start;
+}
+
+section#top .hero-copy {
+  max-width: 980px;
+  margin-inline: 0;
+  text-align: left;
+}
+
+section#top .hero-copy .eyebrow,
+section#top .hero-copy .hero-brand-title,
+section#top .hero-copy h1 {
+  text-align: left;
+}
+
+section#top .hero-copy .hero-intro {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+section#top .hero-copy .button-row {
+  justify-content: flex-start;
+}
+
+section#top .hero-copy h1 .accent-word,
+section#top .hero-copy h1 .talent-word {
+  color: var(--turquoise);
+}
+
+section#top .hero-copy h1 .regional-word {
+  color: var(--white);
+}
+
+@media (max-width: 620px) {
+  section#top .hero-copy,
+  section#top .hero-copy .eyebrow,
+  section#top .hero-copy .hero-brand-title,
+  section#top .hero-copy h1 {
+    text-align: left;
+  }
+
+  section#top .hero-copy .button-row {
+    justify-content: flex-start;
+  }
+}
+
+/* v39 — center-align hero text only. */
+section#top .hero-grid {
+  justify-items: center;
+}
+
+section#top .hero-copy {
+  max-width: 1180px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+section#top .hero-copy .eyebrow,
+section#top .hero-copy .hero-brand-title,
+section#top .hero-copy h1 {
+  text-align: center;
+}
+
+section#top .hero-copy .hero-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section#top .hero-copy .button-row {
+  justify-content: center;
+}
+
+@media (max-width: 620px) {
+  section#top .hero-copy,
+  section#top .hero-copy .eyebrow,
+  section#top .hero-copy .hero-brand-title,
+  section#top .hero-copy h1 {
+    text-align: center;
+  }
+
+  section#top .hero-copy .button-row {
+    justify-content: center;
+  }
 }
